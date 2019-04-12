@@ -1,0 +1,39 @@
+int arr[10][10];
+
+int main()
+{
+int n1,e1;
+ int i,j,t;
+ cout<<"Enter Node : ";
+ cin>>n1;
+ cout<<"Enter Edge : ";
+ cin>>e1;
+
+ int data,data1;
+
+ for(i=0;i<e1;i++)
+ {
+         cin>>data;
+         cin>>data1;
+         arr[data][data1]=1;
+         arr[data1][data]=1;
+
+
+ }
+
+
+  for(i=0;i<n1;i++)
+ {
+     for(j=0;j<n1;++j)
+     {
+         cout << arr[i][j]<<" ";
+     }
+     cout<<"\n";
+ }
+
+
+
+
+
+    return 0;
+}
