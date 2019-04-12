@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int lcs(string first,string secound,int m,int n);
+int maximum(int a,int b);
+
+int main()
+{
+
+string first,secound;
+
+cin>>first>>secound;
+int m,n;
+m=first.size();
+n=secound.size();
+
+int ans;
+ ans = lcs(first,secound,m,n);
+
+cout<< "The result is "<< ans<<"\n";
+
+    return 0;
+}
+
+
+
+int lcs(string first,string secound,int m,int n)
+{
+
+if(m ==0 || n== 0)
+    return 0;
+else if(first[m-1] == secound[n-1])
+return 1 + lcs(first,secound,m-1,n-1);
+else
+    return maximum( lcs(first,secound,m-1,n), lcs(first,secound,m,n-1)  );
+
+}
+
+int maximum(int a,int b)
+{
+    if(a>b)
+        return a;
+    else
+        return b;
+}
+
